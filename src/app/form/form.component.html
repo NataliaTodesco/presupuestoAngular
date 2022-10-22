@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="form.component.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <title>Presupuesto</title>
+  </head>
+  <body>
+    <section id="seccion2">
+        <div class="container">
+            <form id="formulario" action="" (ngSubmit)="f.form.valid && agregarValor()" #f="ngForm">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-1">
+                        <select [ngClass]="{redfocus: tipo == 'egreso'}"
+                        (change)="tipoOperacion()" 
+                        id="select"
+                        class="form-control">
+                            <option value="ingresoOperacion" selected>+</option>
+                            <option value="egreso">-</option>
+                          </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <input [ngClass]="{redfocus: tipo == 'egreso'}"
+                        id="descripcion" 
+                        class="form-control" type="text" 
+                        placeholder="Agregar descripción"
+                        name="descripcion" 
+                        [(ngModel)]="descripcion" required>
+                    </div>
+                    <div class="col-lg-2">
+                        <input [ngClass]="{redfocus: tipo == 'egreso'}"
+                        id="valor" 
+                        class="form-control" 
+                        type="number" 
+                        placeholder="Valor"  
+                        name="valor" 
+                        [(ngModel)]="valor" required>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="submit" id="boton" class="btn btn-light" >
+                            <i [ngClass]="{red: tipo == 'egreso'}" class="bi bi-check-circle" style="font-size: 1.5rem;"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+</html>

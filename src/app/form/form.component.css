@@ -1,0 +1,18 @@
+#seccion2{
+    background-color: rgb(235, 233, 233);
+    padding: 1%;
+}
+#seccion2 .btn{
+    background-color: rgb(235, 233, 233);
+    padding: 1%;
+    border: none;
+}
+.bi{
+    color: cadetblue;
+}
+.red{
+    color: brown;
+}
+.redfocus:focus{
+    border: 1px solid brown;
+}

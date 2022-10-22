@@ -1,0 +1,19 @@
+
+    <section id="seccion3">
+      <div id="listaIngresos">
+        INGRESOS
+        <hr>
+        <div *ngFor="let ingreso of this.ingresos" class="elemento limpiarEstilos">
+          <div class="elemento_descripcion">{{ingreso.descripcion}}</div>
+          <div class="right limpiarEstilos">
+              
+              <div class="elemento_eliminar">
+                  <button class="elemento_eliminar--btn" (click)="eliminarIngreso(ingreso)">
+                    <i class="bi bi-x-circle"></i>
+                  </button>
+              </div>
+              <div class="elemento_valor">+ {{ ingreso.valor | currency : "ARG"  : '$'  : '1.2-2'}}</div>
+          </div>
+      </div>
+    </div>
+    </section>
